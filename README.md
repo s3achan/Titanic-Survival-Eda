@@ -2,9 +2,7 @@
 
 ## 📌 Project Overview
 
-This project performs an in-depth **Exploratory Data Analysis (EDA)** of the famous Titanic passenger dataset. The main goal is to uncover the most important factors that influenced survival during the tragic sinking of the RMS Titanic on April 15, 1912.
-
-We examine how **demographic**, **socio-economic**, and **travel-related** characteristics affected passengers' chances of survival.
+This project presents an exploratory data analysis (EDA) of the Titanic passenger dataset with the goal of identifying patterns and factors associated with passenger survival. The analysis focuses on demographic, socioeconomic, and travel-related attributes to understand how different variables influenced survival outcomes during the disaster.
 
 ## 📂 Dataset
 
