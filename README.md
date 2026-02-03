@@ -1,83 +1,102 @@
-🚢 Titanic Survival Analysis
-Exploratory Data Analysis (EDA)
-📌 Overview
+# 🚢 Titanic Survival Analysis – Exploratory Data Analysis (EDA)
+
+## 📌 Project Overview
 
 This project presents an exploratory data analysis (EDA) of the Titanic passenger dataset with the goal of identifying patterns and factors associated with passenger survival. The analysis focuses on demographic, socioeconomic, and travel-related attributes to understand how different variables influenced survival outcomes during the disaster.
 
-📂 Dataset
+## 📂 Dataset
 
-Source: Kaggle — Titanic: Machine Learning from Disaster
+- **Source**: Kaggle – Titanic: Machine Learning from Disaster  
+- **File used**: `train.csv`  
+- **Records**: 891 passengers  
+- **Link**: [https://www.kaggle.com/competitions/titanic/data](https://www.kaggle.com/competitions/titanic/data)
 
-Competition: Titanic: Machine Learning from Disaster
+### Main features
+- `Survived` (target): 0 = No, 1 = Yes  
+- `Pclass`: Ticket class (1 = 1st, 2 = 2nd, 3 = 3rd)  
+- `Sex`  
+- `Age`  
+- `SibSp`: # of siblings / spouses aboard  
+- `Parch`: # of parents / children aboard  
+- `Fare`  
+- `Embarked`: Port of Embarkation (C = Cherbourg, Q = Queenstown, S = Southampton)  
+- `Cabin`, `Name`, `Ticket`, `PassengerId`
 
-File Used: train.csv
+## 🎯 Objectives
 
-Link: https://www.kaggle.com/competitions/titanic/data
+- Understand the structure and quality of the dataset
+- Handle missing and inconsistent data appropriately
+- Explore relationships between passenger attributes and survival
+- Identify key factors associated with survival outcomes
 
-The dataset contains 891 passenger records with information such as age, gender, passenger class, fare, family size, and embarkation port.
-
-🎯 Objectives
-
-Understand the structure and quality of the dataset
-
-Handle missing and inconsistent data appropriately
-
-Explore relationships between passenger attributes and survival
-
-Identify key factors associated with survival outcomes
-
-🧹 Data Cleaning & Preprocessing
+## 🧹 Data Cleaning & Preprocessing
 
 The following preprocessing steps were applied:
+- Dropped non-informative / high-cardinality columns: `PassengerId`, `Name`, `Ticket`  
+- Removed `Cabin` column (≈77% missing values)  
+- Imputed missing `Age` values using **median age per gender and class**  
+- Imputed the 2 missing `Embarked` values using random sampling from observed distribution  
+- Created new derived features (see below)
 
-Removed non-informative identifier columns (Name, Ticket, PassengerId)
+## 🛠 Feature Engineering
 
-Dropped the Cabin column due to a high proportion of missing values
-
-Imputed missing age values using gender-based median imputation
-
-Handled missing embarkation values through random sampling from existing categories
-
-Created derived features such as age groups to improve interpretability
-
-🛠 Feature Engineering
-
-Age Grouping: Continuous age values were binned into meaningful categories (Child, Teen, Young Adult, Adult, Senior) to capture non-linear survival patterns.
-
-📊 Exploratory Analysis
-
-The analysis explores survival patterns across multiple dimensions, including:
-
-Gender: Comparison of survival outcomes between male and female passengers
-
-Passenger Class: Survival trends across first, second, and third class
-
-Age & Age Groups: Distribution of age and its relationship with survival
-
-Embarkation Port: Differences in survival outcomes by port of embarkation
-
-Family Composition: Impact of traveling with siblings, spouses, parents, or children
-
-Visualizations include histograms, count plots, and grouped bar charts with annotated counts and percentages for clarity.
-
-🔍 Key Observations
-
-Female passengers exhibited significantly higher survival rates than males
-
-Survival likelihood decreased from first to third class
-
-Younger passengers, particularly children, showed higher survival rates
-
-Embarkation port showed variation in survival, likely driven by class and demographic differences
+- **AgeGroup**: Binned continuous age into meaningful categories  
+  - Child (0–12)  
+  - Teen (13–19)  
+  - Young Adult (20–29)  
+  - Adult (30–49)  
+  - Senior (50+)  
 
 
-s🧰 Tools & Libraries
-Python
+## 📊 Exploratory Data Analysis – Key Visualizations
 
-Pandas
+Explored survival patterns through:
 
-NumPy
+- Gender distribution and survival rates  
+- Passenger class vs survival (strongest socioeconomic signal)  
+- Age distribution + survival by age group  
+- Survival by embarkation port  
+- Interaction effects: gender × class, class × age group, etc.
 
-Matplotlib
+Visual styles used:
+- Count plots with hue = Survived  
+- Bar plots showing survival percentages  
+- Histograms + KDE for age 
+- Grouped bar charts with value annotations
 
-Seaborn
+## 🔍 Key Findings
+
+1. **Gender** was the strongest single predictor  
+   → Females: ~74% survival  
+   → Males: ~19% survival
+
+2. **Passenger Class** showed clear social stratification  
+   → 1st class: ~63% survival  
+   → 2nd class: ~47%  
+   → 3rd class: ~24%
+
+3. **Women and children first** policy is visible in the data  
+   - Very high survival among 1st & 2nd class females and children  
+   - Extremely low survival for 3rd class adult males
+
+4. **Age effect** is non-linear  
+   - Children had better survival rates  
+   - Elderly passengers had very low survival
+
+5. **Embarkation port** showed differences (mostly proxy for class & nationality)  
+   - Cherbourg (C) → highest survival rate (~55%)  
+   - Southampton (S) → lowest (~34%)
+
+##  ✅ Conclusion
+
+This exploratory analysis highlights gender, passenger class, and age as the strongest factors associated with survival on the Titanic. The findings provide a strong foundation for further modeling and predictive analysis.
+
+## 🧰 Technologies & Libraries
+
+```text
+Python 3.8+
+├── pandas               → data manipulation & cleaning
+├── numpy                → numerical operations
+├── matplotlib           → base plotting
+├── seaborn              → statistical visualizations
+└── jupyter              → interactive notebook environment
