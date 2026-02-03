@@ -1,8 +1,5 @@
 # 🚢 Titanic Survival Analysis – Exploratory Data Analysis (EDA)
 
-![Titanic](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/320px-RMS_Titanic_3.jpg)
-*(RMS Titanic departing Southampton on 10 April 1912)*
-
 ## 📌 Project Overview
 
 This project performs an in-depth **Exploratory Data Analysis (EDA)** of the famous Titanic passenger dataset. The main goal is to uncover the most important factors that influenced survival during the tragic sinking of the RMS Titanic on April 15, 1912.
