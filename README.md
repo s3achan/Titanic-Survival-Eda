@@ -51,9 +51,7 @@ Performed steps:
   - Young Adult (20–29)  
   - Adult (30–49)  
   - Senior (50+)  
-- **FamilySize** = `SibSp` + `Parch` + 1 (including self)  
-- **IsAlone** = (FamilySize == 1)  
-- **Title** extracted from `Name` (Mr, Mrs, Miss, Master, etc.) – used temporarily for imputation
+
 
 ## 📊 Exploratory Data Analysis – Key Visualizations
 
@@ -63,14 +61,12 @@ Explored survival patterns through:
 - Passenger class vs survival (strongest socioeconomic signal)  
 - Age distribution + survival by age group  
 - Survival by embarkation port  
-- Family size / traveling alone vs survival  
 - Interaction effects: gender × class, class × age group, etc.
 
 Visual styles used:
 - Count plots with hue = Survived  
 - Bar plots showing survival percentages  
-- Histograms + KDE for age/fare  
-- Cross-tab heatmaps  
+- Histograms + KDE for age 
 - Grouped bar charts with value annotations
 
 ## 🔍 Key Findings
@@ -95,10 +91,6 @@ Visual styles used:
 5. **Embarkation port** showed differences (mostly proxy for class & nationality)  
    - Cherbourg (C) → highest survival rate (~55%)  
    - Southampton (S) → lowest (~34%)
-
-6. **Family size** had a complex effect  
-   - Traveling alone was dangerous for males  
-   - Small families (2–4 people) showed better survival than very large groups
 
 ## 🧰 Technologies & Libraries
 
