@@ -24,21 +24,18 @@ This project presents an exploratory data analysis (EDA) of the Titanic passenge
 
 ## 🎯 Objectives
 
-- Understand dataset structure, quality and completeness  
-- Clean and prepare the data for meaningful analysis  
-- Identify strong patterns and relationships with survival  
-- Highlight the most influential factors on survival probability  
-- Create clear, publication-quality visualizations
+- Understand the structure and quality of the dataset
+- Handle missing and inconsistent data appropriately
+- Explore relationships between passenger attributes and survival
+- Identify key factors associated with survival outcomes
 
 ## 🧹 Data Cleaning & Preprocessing
 
-Performed steps:
-
+The following preprocessing steps were applied:
 - Dropped non-informative / high-cardinality columns: `PassengerId`, `Name`, `Ticket`  
 - Removed `Cabin` column (≈77% missing values)  
 - Imputed missing `Age` values using **median age per gender and class**  
 - Imputed the 2 missing `Embarked` values using random sampling from observed distribution  
-- Converted `Survived` and `Pclass` to appropriate types when needed  
 - Created new derived features (see below)
 
 ## 🛠 Feature Engineering
@@ -89,6 +86,10 @@ Visual styles used:
 5. **Embarkation port** showed differences (mostly proxy for class & nationality)  
    - Cherbourg (C) → highest survival rate (~55%)  
    - Southampton (S) → lowest (~34%)
+
+##  ✅ Conclusion
+
+This exploratory analysis highlights gender, passenger class, and age as the strongest factors associated with survival on the Titanic. The findings provide a strong foundation for further modeling and predictive analysis.
 
 ## 🧰 Technologies & Libraries
 
