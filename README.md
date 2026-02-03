@@ -1,5 +1,6 @@
 🚢 Titanic Survival Analysis
 Exploratory Data Analysis (EDA)
+
 📌 Overview
 
 This project presents an exploratory data analysis (EDA) of the Titanic passenger dataset with the goal of identifying patterns and factors associated with passenger survival. The analysis focuses on demographic, socioeconomic, and travel-related attributes to understand how different variables influenced survival outcomes during the disaster.
